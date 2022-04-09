@@ -1,8 +1,8 @@
-import { validation } from "../../utils/validation.js";
+import {validation} from '../../utils/validation.js';
 
-export default function TodoCount({ $target }) {
+export default function TodoCount({$target, initialState}) {
   if (!new.target) {
-    throw new Error("new 키워드를 사용해주세요!");
+    throw new Error('new 키워드를 사용해주세요!');
   }
 
   this.state = {
@@ -10,10 +10,11 @@ export default function TodoCount({ $target }) {
     totalTodoCount: 0,
   };
 
-  const $todoCount = document.createElement("div");
+
+  const $todoCount = document.createElement('div');
   $target.appendChild($todoCount);
 
-  this.setState = (nextState) => {
+  this.setState = nextState => {
     validation(nextState);
     this.state = nextState;
     this.render();

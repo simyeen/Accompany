@@ -1,10 +1,8 @@
-import Header from './components/Header/Header.js';
-import TodoForm from './components/TodoForm/TodoForm.js';
-import TodoList from './components/TodoList/TodoList.js';
-import TodoCount from './components/TodoCount/TodoCount.js';
-import HomePage from './components/pages/Home/HomePage.js';
+import {createComponent} from './utils/createComponent.js';
+import Home from './page/Home/index.js';
 
 export default function App({$target, initialState}) {
+  Home({$target, initialState});
   function route() {
     const {pathname} = location;
     const $container = document.querySelector('.app');
@@ -19,37 +17,7 @@ export default function App({$target, initialState}) {
       $container.innerHTML = '<h1>qna board</h1>';
     }
   }
-
-  window.addEventListener('popstate', () => route());
-
-  new HomePage({
-    $target,
-    header: new Header({$target, text: 'Simple Todo List'}),
-  });
-
-  new TodoForm({
-    $target,
-    onSubmit: text => {
-      todoList.setState([...todoList.state, {text, isCompleted: false}]);
-    },
-  });
-
-  const todoList = new TodoList({
-    $target,
-    initialState,
-    onTodoChange: todos =>
-      todoCount.setState({
-        completedTodoCount: todos.filter(todo => todo.isCompleted === true)
-          .length,
-        totalTodoCount: todos.length,
-      }),
-  });
-
-  const todoCount = new TodoCount({
-    $target,
-    initialState: todoList.state,
-  });
-
+  
   window.addEventListener('click', event => {
     if (event.target.className === 'it-button') {
       event.preventDefault();
@@ -62,5 +30,11 @@ export default function App({$target, initialState}) {
     }
   });
 
+  
+  
+  window.addEventListener('popstate', () => route());
+  
   route();
+
+
 }

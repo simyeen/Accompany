@@ -11,47 +11,15 @@
       crossorigin="anonymous"
     />
 
+    <link rel="stylesheet" href="./src/page/Home/Home.css" />
+    <link rel="stylesheet" href="./src/components/Header/Header.css" />
     <link rel="stylesheet" href="./src/components/TodoList/TodoList.css" />
 
     <title>Project Struture</title>
   </head>
   <body>
     <main class="app"></main>
-    <!-- <a class="LinkItem" href="/product-list">Product List</a>
-    <a class="LinkItem" href="/article-list">Article List</a> -->
     <div id="container"></div>
-    <script src="/src/main.js" type="module"></script>
-    <!-- <script>
-
-      function route() {
-        const {pathname} = location;
-        const $container = document.querySelector('#container');
-        console.log(pathname);
-        if (pathname === '/') {
-          $container.innerHTML = '<h1>Home</h1>';
-        } else if (pathname === '/product-list') {
-          $container.innerHTML = '<h1>상풍목록</h1>';
-        } else if (pathname === '/article-list') {
-          $container.innerHTML = '<h1>게시글 목록</h1>';
-        }
-      }
-
-      route();
-
-      window.addEventListener('click', (event) => {
-        if(event.target.className === 'LinkItem') {
-          event.preventDefault();
-          
-          const { href } = event.target;
-          const path = href.replace(window.location.origin, '');
-            
-          history.pushState(null, null, path);
-          route();
-        } 
-      });
-  
-      window.addEventListener('popstate', () => route()); -->
-
-    </script>
+    <script src="src/main.js" type="module"></script>
   </body>
 </html>
