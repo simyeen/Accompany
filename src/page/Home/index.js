@@ -1,5 +1,5 @@
 import HomeContainer from './HomeContainer.js';
 
-export default function Home({$target, initialState}) {
-  return HomeContainer({$target, initialState});
+export default function Home({$target, $header, initialState}) {
+  return HomeContainer({$target, $header, initialState});
 }

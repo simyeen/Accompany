@@ -1,23 +1,24 @@
-import {createComponent} from './utils/createComponent.js';
 import Home from './page/Home/index.js';
-
+import Board from './page/Board/index.js';
+import Header from './components/Header/Header.js';
 export default function App({$target, initialState}) {
-  Home({$target, initialState});
+  const $header = new Header({$target, text: '안녕 나는 헤더'});
+
+  const home = Home({$target, $header, initialState});
+  // Board({$target, initialState});
+
   function route() {
     const {pathname} = location;
     const $container = document.querySelector('.app');
 
     if (pathname === '/') {
-      $container.innerHTML = '<h1>Home</h1>';
+      home.render();
     } else if (pathname === '/it-board') {
-      $container.innerHTML = '<h1>it-board</h1>';
     } else if (pathname === '/welfare-board') {
-      $container.innerHTML = '<h1>welfare-board</h1>';
     } else if (pathname === '/qna-board') {
-      $container.innerHTML = '<h1>qna board</h1>';
     }
   }
-  
+
   window.addEventListener('click', event => {
     if (event.target.className === 'it-button') {
       event.preventDefault();
@@ -30,11 +31,7 @@ export default function App({$target, initialState}) {
     }
   });
 
-  
-  
   window.addEventListener('popstate', () => route());
-  
+
   route();
-
-
 }

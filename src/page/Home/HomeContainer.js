@@ -1,7 +1,7 @@
 import Header from '../../components/Header/Header.js';
 import HomePresenter from './HomePresenter.js';
 
-export default function HomeContainer({$target, initialState}) {
+export default function HomeContainer({$target, $header, initialState}) {
   // 이곳에서 필요한 함수 작성
   // useState가 필요하면 여기서 함수작성하고
   // Presenter에서 this.state 작성
@@ -18,9 +18,13 @@ export default function HomeContainer({$target, initialState}) {
 
   useEffect();
 
-  new Header({$target, text: '안녕 나는 헤더'});
-
-  return new HomePresenter({$target, initialState, searchKeyword, setState});
+  return new HomePresenter({
+    $target,
+    $header,
+    initialState,
+    searchKeyword,
+    setState,
+  });
 }
 
 // initialState도 있어야 되는데 그냥 안넣은듯

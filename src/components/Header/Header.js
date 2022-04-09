@@ -9,6 +9,4 @@ export default function Header({$target, text}) {
   this.render = () => {
     $header.textContent = text;
   };
-
-  this.render();
 }
