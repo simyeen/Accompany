@@ -10,6 +10,7 @@ export default function TodoCount({$target, initialState}) {
     totalTodoCount: 0,
   };
 
+
   const $todoCount = document.createElement('div');
   $target.appendChild($todoCount);
 
@@ -24,5 +25,3 @@ export default function TodoCount({$target, initialState}) {
 
   this.render();
 }
-
-// 도야 되는데 그냥 안넣은듯

@@ -13,7 +13,7 @@ export default function TodoForm({$target, onSubmit}) {
             <input type="text" name="todo" />
             <button>Add</button>
         `;
-
+    // render 실행 마다 addEventListener 할당 방지 목적
     if (!isInit) {
       $form.addEventListener('submit', e => {
         e.preventDefault();
@@ -30,5 +30,3 @@ export default function TodoForm({$target, onSubmit}) {
 
   this.render();
 }
-
-//isInit이 있는 이유는?
