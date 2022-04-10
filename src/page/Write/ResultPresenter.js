@@ -11,9 +11,8 @@ export default function ResultPresenter({
   }
 
   this.render = () => {
-    console.log('result', $target);
     const $wrapper = createComponent('div', 'result-wrapper ', $target);
-    $wrapper.innerHTML = '안녕 나는 결과페이지';
+    $wrapper.innerHTML = '<p>안녕 나는 결과 페이지</p>';
   };
 
   // this.render();

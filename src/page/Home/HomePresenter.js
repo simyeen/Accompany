@@ -10,23 +10,30 @@ export default function HomePresenter({
     throw new Error('new 키워드를 사용해주세요!');
   }
 
+  const categroise = [
+    {text: 'IT', url: '#result'},
+    {text: '복지', url: '#result'},
+    {text: '업무', url: '#result'},
+    {text: 'Q&A', url: '#result'},
+  ];
+
   this.render = () => {
     const $wrapper = createComponent(
       'div',
-      'wrapper container border ',
+      'wrapper py-3 container-fluid border justify-content-center',
       $target,
     );
     const $subWrapper1 = createComponent(
       'div',
-      'subWrapper1 cotainer-fluid',
+      'subWrapper1 row cotainer-fluid justify-content-center',
       $wrapper,
     );
-    const $subWrapper2 = createComponent(
-      'div',
-      'subWrapper2 cotainer-fluid row',
-      $wrapper,
+
+    const $mainText = createComponent(
+      'p',
+      'mainText text-center',
+      $subWrapper1,
     );
-    const $mainText = createComponent('p', 'mainText', $subWrapper1);
     const $searchBox = createComponent(
       'input',
       'searchBox col-6 ',
@@ -34,29 +41,65 @@ export default function HomePresenter({
     );
     const $contentList = createComponent(
       'div',
-      'contentList row',
+      'contentList row justify-content-center',
       $subWrapper1,
     );
-    for (let i = 0; i < 4; i++) {
-      createComponent('div', 'content col-3', $contentList);
-    }
-    const $community = createComponent(
+    $contentList.innerHTML = categroise.map(
+      c => `<div class='category col-3'>
+      <a class='url col-2'; href=${c.url}>${c.text}<a> 
+      </div>`,
+    );
+
+    const $subWrapper2 = createComponent(
       'div',
-      'community container-fluid col-md-5 ',
+      'subWrapper2 cotainer-fluid mt-5 row justify-content-center',
+      $wrapper,
+    );
+    const $commnityContainer = createComponent(
+      'div',
+      'container commnity my-1 col-sm-5 justify-content-center',
       $subWrapper2,
     );
 
-    const $qna = createComponent(
+    const $commnityContainerTitle = createComponent(
+      'p',
+      'commnityContainerTitle text-center',
+      $commnityContainer,
+    );
+
+    const $commnityBox = createComponent(
       'div',
-      'qna container-fluid col-md-5',
+      'box commnityBox',
+      $commnityContainer,
+    );
+
+    const $qnaContainer = createComponent(
+      'div',
+      'container qna my-1 col-sm-5 justify-content-center',
       $subWrapper2,
     );
+
+    const $qnaContainerTitle = createComponent(
+      'p',
+      'qnaContainerTitle text-center',
+      $qnaContainer,
+    );
+
+    const $qnaBox = createComponent('div', 'box qnaBox', $qnaContainer);
+
     const $div = document.createElement('div');
     $div.innerHTML = '<a class=it-button href="#result">Go Result</a>';
     $subWrapper2.appendChild($div);
 
-    $mainText.textContent = '안녕 나는 뭐시기저시기 메인 텍스트야';
+    const $div2 = document.createElement('div');
+    $div2.innerHTML = '<a class=it-button href="#wrtie">Go Write</a>';
+    $subWrapper2.appendChild($div2);
+
+    $mainText.innerHTML = '안녕 나는 뭐시기저시기 <br/> 메인 텍스트야';
     $searchBox.textContent = '안녕 나는 검색 박스';
+    $commnityContainerTitle.textContent = '커뮤니티';
+    $qnaContainerTitle.textContent = '해결해주세요';
+
     $('.searchBox').on('click', searchKeyword);
   };
 }

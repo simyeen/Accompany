@@ -6,25 +6,38 @@
 border: 2px solid black;
 }
 
-.content{
-    margin:2px;
-    width:20px;
-    height: 20px;
+.category{
+    display: inline;
     border: 1px solid black;
+    border-radius: 16px;
+}
+
+.url{
+    display: inline;
+    /* padding: 0; */
+    /* margin:0; */
 }
 
 .subWrapper2{
+    
     background-color: aquamarine;
 }
 
-.community{
-    height: 100px;
+.container{
+    position: relative; 
+    height: 300px;
     border:1px solid black;
-    background-color: aqua;
+    /* background-color: aqua; */
+    
 }
 
-.qna{
-    height: 100px;
-    border:1px solid black;
+.box{
+    top:-20px;
+    left: 0;
+    position: absolute; 
+    width: 100%;
+    height: 200px;
     background-color: aqua;
+    border-radius: 16px;
+    
 }
