@@ -11,7 +11,6 @@ export default function HomePresenter({
   }
 
   this.render = () => {
-    $header.render();
     const $wrapper = createComponent(
       'div',
       'wrapper container border ',
@@ -52,15 +51,12 @@ export default function HomePresenter({
       'qna container-fluid col-5',
       $subWrapper2,
     );
+    const $div = document.createElement('div');
+    $div.innerHTML = '<a class=it-button href="#result">Go Result</a>';
+    $subWrapper2.appendChild($div);
+
     $mainText.textContent = '안녕 나는 뭐시기저시기 메인 텍스트야';
     $searchBox.textContent = '안녕 나는 검색 박스';
-
-    $searchBox.addEventListener('click', function () {
-      searchKeyword();
-    });
+    $('.searchBox').on('click', searchKeyword);
   };
-
-  this.render();
 }
-
-// initialState도 있어야 되는데 그냥 안넣은듯

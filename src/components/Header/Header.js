@@ -3,12 +3,9 @@ export default function Header({$target, text}) {
     throw new Error('new 키워드를 사용해주세요!');
   }
 
-  const $header = document.createElement('h1');
-  $target.appendChild($header);
-
   this.render = () => {
+    const $header = document.createElement('h1');
+    $target.appendChild($header);
     $header.textContent = text;
   };
-
-  this.render();
 }

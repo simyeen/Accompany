@@ -14,10 +14,6 @@ export default function HomeContainer({$target, $header, initialState}) {
     console.log('검색함수실행');
   };
 
-  const useEffect = () => {};
-
-  useEffect();
-
   return new HomePresenter({
     $target,
     $header,
