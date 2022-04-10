@@ -42,13 +42,13 @@ export default function HomePresenter({
     }
     const $community = createComponent(
       'div',
-      'community container-fluid col-5',
+      'community container-fluid col-md-5 ',
       $subWrapper2,
     );
 
     const $qna = createComponent(
       'div',
-      'qna container-fluid col-5',
+      'qna container-fluid col-md-5',
       $subWrapper2,
     );
     const $div = document.createElement('div');
