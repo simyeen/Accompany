@@ -1,7 +1,7 @@
 import Header from '../../components/Header/Header.js';
-import ResultPresenter from './ResultPresenter.js';
+import WritePresenter from './WritePresenter.js';
 
-export default function ResultContainer({$target, $header, initialState}) {
+export default function WriteContainer({$target, $header, initialState}) {
   // 이곳에서 필요한 함수 작성
   // useState가 필요하면 여기서 함수작성하고
   // Presenter에서 this.state 작성
@@ -14,7 +14,7 @@ export default function ResultContainer({$target, $header, initialState}) {
     console.log('검색함수실행');
   };
 
-  return new ResultPresenter({
+  return new WritePresenter({
     $target,
     $header,
     initialState,

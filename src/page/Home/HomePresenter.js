@@ -92,7 +92,7 @@ export default function HomePresenter({
     $subWrapper2.appendChild($div);
 
     const $div2 = document.createElement('div');
-    $div2.innerHTML = '<a class=it-button href="#wrtie">Go Write</a>';
+    $div2.innerHTML = '<a class=it-button href="#write">Go Write</a>';
     $subWrapper2.appendChild($div2);
 
     $mainText.innerHTML = '안녕 나는 뭐시기저시기 <br/> 메인 텍스트야';
