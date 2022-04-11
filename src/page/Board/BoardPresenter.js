@@ -1,15 +1,22 @@
 import BoardSideBar from '../../components/BoardSideBar/BoardSideBar.js';
 import BoardMain from '../../components/BoardMain/BoardMain.js';
 import BoardTitle from '../../components/BoardTitle/BoardTitle.js';
+import BoardRightBar from '../../components/BoardRightBar/BoardRightBar.js';
 export default function BoardPresenter({$target}) {
   this.render = ({title}) => {
+    const $boardWrapper = document.createElement('div');
+    $boardWrapper.className = 'board-wrapper flex-row';
+    const $boardTitle = new BoardTitle({$target: $boardWrapper, title});
     const $boardPage = document.createElement('div');
-    $boardPage.className = 'board-page container-fluid row';
+    $boardPage.className = 'board-page row';
 
-    const $boardTitle = new BoardTitle({$target: $boardPage, title});
     const $boardSideBar = new BoardSideBar({$target: $boardPage});
     const $boardMain = new BoardMain({$target: $boardPage});
 
-    $target.appendChild($boardPage);
+    $boardWrapper.appendChild($boardPage);
+
+    const $boardRightBar = new BoardRightBar({$target: $boardPage});
+
+    $target.appendChild($boardWrapper);
   };
 }
