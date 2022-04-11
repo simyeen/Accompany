@@ -1,8 +1,9 @@
 .board-title {
-    background-color: #FFCBCB;
-    height: 50px;
-    line-height: 50px;
+    background-color: #FFB79B;
+    height: 88px;
+    line-height: 88px;
     border: none;
     color: white;
-    padding-left: 50px;
+    margin: 0 0 20px 0;
+    padding-left: 20px;
 }

@@ -1,4 +1,8 @@
-.board-page {
-    max-width: 1440px;
+.board-wrapper {
+    max-width: 1240px;
     margin: 0 auto;
+}
+
+.board-page {
+    min-height: 600px;
 }

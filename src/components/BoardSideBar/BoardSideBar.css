@@ -1,11 +1,14 @@
 .boardSideBar {
     --bs-gutter-x: 0;
-    border-right: 1px solid #000000;   
+    
     max-width: 160px;
+    color: #585858;
+    border-right: 1px solid #585858;   
 }
 .board-qna-box {
+    color: #FFB79B;
     width: 100%;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #585858;
 }
 .board-qna {
     font-size: 30px;
@@ -29,3 +32,16 @@
 #check-btn { display: none; }
 
 .menubars { display: none; }
+
+
+.board-side-bar-list-item {
+    margin-bottom: 22px;
+}
+
+.board-side-bar-list-item span {
+    font-size: 18px;
+}
+
+.board-side-bar-list-item-triangle {
+    margin-top: 6px;
+}
