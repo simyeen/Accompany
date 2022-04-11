@@ -17,7 +17,7 @@ export default function WritePresenter({
   this.render = () => {
     const $wrapper = createComponent(
       'div',
-      'write-wrapper container-fluid row p-4',
+      'write-wrapper container-fluid row p-3',
       $target,
     );
 
