@@ -1,0 +1,31 @@
+.boardSideBar {
+    --bs-gutter-x: 0;
+    border-right: 1px solid #000000;   
+    max-width: 160px;
+}
+.board-qna-box {
+    width: 100%;
+    border-bottom: 1px solid #000000;
+}
+.board-qna {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.board-info-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav-link {
+    padding: 0;
+    color: #000000;
+}
+
+.nav-item span {
+    color: #000000;
+}
+
+#check-btn { display: none; }
+
+.menubars { display: none; }

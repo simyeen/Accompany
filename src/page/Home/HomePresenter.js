@@ -11,10 +11,10 @@ export default function HomePresenter({
   }
 
   const categroise = [
-    {text: 'IT', url: '#result'},
-    {text: '복지', url: '#result'},
-    {text: '업무', url: '#result'},
-    {text: 'Q&A', url: '#result'},
+    {text: 'IT', url: '#it-board'},
+    {text: '복지', url: '#welfare-board'},
+    {text: '업무', url: '#working-board'},
+    {text: 'Q&A', url: '#qna-board'},
   ];
 
   this.render = () => {
