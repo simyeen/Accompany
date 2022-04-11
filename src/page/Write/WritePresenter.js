@@ -18,97 +18,97 @@ export default function WritePresenter({
     const $wrapper = createComponent(
       'div',
       'write-wrapper container-fluid row p-3',
-      $target,
+      $target
     );
 
     const $leftSidebar = createComponent(
       'div',
       'leftSidebar col-md-2',
-      $wrapper,
+      $wrapper
     );
 
     const $subWrapper = createComponent(
       'div',
       'subWrapper container-container col-md-8',
-      $wrapper,
+      $wrapper
     );
 
     const $rightSidebar = createComponent(
       'div',
       'rightSidebar col-md-2',
-      $wrapper,
+      $wrapper
     );
 
     const $editorTtitleContainer = createComponent(
       'div',
       'editorTtitleContainer row justify-content-between border-bottom',
-      $subWrapper,
+      $subWrapper
     );
 
     const $space = createComponent(
       'div',
       'space col-md-4',
-      $editorTtitleContainer,
+      $editorTtitleContainer
     );
 
     const $editorTitle = createComponent(
       'p',
       'editorTitle col-md-4 text-center ',
-      $editorTtitleContainer,
+      $editorTtitleContainer
     );
 
     const $editorButtonBox = createComponent(
       'div',
       'editorButtonBox px-1 col-md-4 text-center row',
-      $editorTtitleContainer,
+      $editorTtitleContainer
     );
 
     const $editorButton1 = createComponent(
       'button',
       'editorButton col mx-2',
-      $editorButtonBox,
+      $editorButtonBox
     );
 
     const $editorButton2 = createComponent(
       'button',
       'editorButton col',
-      $editorButtonBox,
+      $editorButtonBox
     );
 
     const $selectContainer = createComponent(
       'div',
       'selectContainer row border-bottom',
-      $subWrapper,
+      $subWrapper
     );
 
     const $selectTitle = createComponent(
       'p',
       'selectTitle col-2',
-      $selectContainer,
+      $selectContainer
     );
     const $selectDropdown = createComponent(
       'div',
       'selectDropdown col',
-      $selectContainer,
+      $selectContainer
     );
 
     const $titleContainer = createComponent(
       'div',
       'titleContainer row justify-content-between border-bottom',
-      $subWrapper,
+      $subWrapper
     );
 
     const $title = createComponent('p', 'myTitle col-2', $titleContainer);
     const $titleInput = createComponent(
       'input',
       'titleInput col',
-      $titleContainer,
+      $titleContainer
     );
 
     const $editorContainer = createComponent(
       'div',
       'editorContainer p-4 mb-5',
-      $subWrapper,
+      $subWrapper
     );
 
     const $editor = createComponent('div', 'editor', $editorContainer);
@@ -117,7 +117,7 @@ export default function WritePresenter({
     const $tagContainer = createComponent(
       'div',
       'tagContainer row justify-content-between border-bottom mb-4',
-      $subWrapper,
+      $subWrapper
     );
 
     const $tagTitle = createComponent('p', 'tagTitle col', $tagContainer);
@@ -125,19 +125,19 @@ export default function WritePresenter({
     const $tagAddButton = createComponent(
       'button',
       'tagAddButton col',
-      $tagContainer,
+      $tagContainer
     );
 
     const $writeSubmitButtonContainer = createComponent(
       'div',
       'writeSubmitButtonContainer text-center',
-      $subWrapper,
+      $subWrapper
     );
 
     const $writeSubmitButton = createComponent(
       'button',
       'writeSubmitButton',
-      $writeSubmitButtonContainer,
+      $writeSubmitButtonContainer
     );
 
     $editorTitle.textContent = '질문 등록';
@@ -157,5 +157,3 @@ export default function WritePresenter({
     $writeSubmitButton.textContent = '올리기';
   };
 }
-
-// initialState도 있어야 되는데 그냥 안넣은듯

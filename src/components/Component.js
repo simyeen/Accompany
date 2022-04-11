@@ -16,5 +16,3 @@ export default function Component({$target, initialState}) {
 
   this.render();
 }
-
-// initialState도 있어야 되는데 그냥 안넣은듯
