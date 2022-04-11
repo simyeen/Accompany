@@ -1,3 +1,4 @@
+import SearchBar from '../../components/SearchBar/SearchBar.js';
 import {createComponent} from '../../utils/createComponent.js';
 
 export default function HomePresenter({
@@ -21,70 +22,73 @@ export default function HomePresenter({
     const $wrapper = createComponent(
       'div',
       'wrapper p-3 container-fluid border justify-content-center',
-      $target,
+      $target
     );
     const $subWrapper1 = createComponent(
       'div',
       'subWrapper1 row cotainer-fluid justify-content-center',
-      $wrapper,
+      $wrapper
     );
 
     const $mainText = createComponent(
       'p',
       'mainText text-center',
-      $subWrapper1,
+      $subWrapper1
     );
-    const $searchBox = createComponent(
-      'input',
-      'searchBox col-6 ',
-      $subWrapper1,
-    );
+
+    const $searchBar = new SearchBar({$target: $subWrapper1});
+
+    // const $searchBox = createComponent(
+    //   'input',
+    //   'searchBox col-6 ',
+    //   $subWrapper1,
+    // );
     const $contentList = createComponent(
       'div',
       'contentList row justify-content-center',
-      $subWrapper1,
+      $subWrapper1
     );
     $contentList.innerHTML = categroise
       .map(
         c => `<div class='category col-3'>
       <a class='url col-2'; href=${c.url}>${c.text}<a> 
-      </div>`,
+      </div>`
       )
       .join('');
 
     const $subWrapper2 = createComponent(
       'div',
       'subWrapper2 cotainer-fluid mt-5 row justify-content-center',
-      $wrapper,
+      $wrapper
     );
     const $commnityContainer = createComponent(
       'div',
       'container commnity my-1 col-sm-5 justify-content-center',
-      $subWrapper2,
+      $subWrapper2
     );
 
     const $commnityContainerTitle = createComponent(
       'p',
       'commnityContainerTitle text-center',
-      $commnityContainer,
+      $commnityContainer
     );
 
     const $commnityBox = createComponent(
       'div',
       'box commnityBox',
-      $commnityContainer,
+      $commnityContainer
     );
 
     const $qnaContainer = createComponent(
       'div',
       'container qna my-1 col-sm-5 justify-content-center',
-      $subWrapper2,
+      $subWrapper2
     );
 
     const $qnaContainerTitle = createComponent(
       'p',
       'qnaContainerTitle text-center',
-      $qnaContainer,
+      $qnaContainer
     );
 
     const $qnaBox = createComponent('div', 'box qnaBox', $qnaContainer);
@@ -98,10 +102,10 @@ export default function HomePresenter({
     $subWrapper2.appendChild($div2);
 
     $mainText.innerHTML = '안녕 나는 뭐시기저시기 <br/> 메인 텍스트야';
-    $searchBox.textContent = '안녕 나는 검색 박스';
+
     $commnityContainerTitle.textContent = '커뮤니티';
     $qnaContainerTitle.textContent = '해결해주세요';
 
-    $('.searchBox').on('click', searchKeyword);
+    // $('.searchBar').on('click', searchKeyword);
   };
 }
