@@ -1,5 +1,6 @@
 import {validation} from '../../utils/validation.js';
 
+// 기본 Compoenents 템플릿
 export default function Component({$target, initialState}) {
   if (!new.target) {
     throw new Error('new 키워드를 사용해주세요!');

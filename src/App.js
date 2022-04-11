@@ -1,4 +1,4 @@
-import Header from './components/Header/Header.js';
+import Header from './components/Header/index.js';
 import Home from './page/Home/index.js';
 import Result from './page/Result/index.js';
 import Write from './page/Write/index.js';

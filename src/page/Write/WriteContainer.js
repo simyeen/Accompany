@@ -1,4 +1,3 @@
-import Header from '../../components/Header/Header.js';
 import WritePresenter from './WritePresenter.js';
 
 export default function WriteContainer({$target, $header, initialState}) {
