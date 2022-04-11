@@ -1,6 +1,7 @@
 .board-wrapper {
     max-width: 1240px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .board-page {

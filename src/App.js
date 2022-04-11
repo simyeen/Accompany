@@ -29,8 +29,40 @@ export default function App({$target, initialState}) {
       writePage.render();
     } else if (pathname === '#it-board') {
       boardPage.render({
-        title: 'IT',
-        menu: {},
+        data: {
+          title: 'IT',
+          menu: {
+            IT: {
+              title: '카테고리',
+              업무시스템: [
+                '메일',
+                'TEAMS',
+                '메신저',
+                'KOS',
+                'ICIS',
+                'KT-WORKS 가이드',
+              ],
+              'PC OA': [
+                'PC 설정',
+                '네트워크 설정',
+                '윈도우',
+                'IE',
+                '오피스',
+                '복합기',
+              ],
+              '임직원 기기': ['VDI', 'PC', '모바일'],
+              '필수보안 S/W': [
+                'DLP',
+                'DRM',
+                'V3',
+                'APC',
+                'PC 워터마크',
+                'Privacy-l',
+                '사내 접근제어',
+              ],
+            },
+          },
+        },
       });
     } else if (pathname === '#welfare-board') {
       boardPage.render({
