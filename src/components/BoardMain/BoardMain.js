@@ -1,3 +1,5 @@
+import {BoardPostList} from '../BoardPostList/BoardPostList.js';
+
 export default function BoardMain({$target}) {
   this.render = () => {
     const $boardMain = document.createElement('div');
@@ -73,43 +75,8 @@ export default function BoardMain({$target}) {
         </div>
         <button class="btn" type="button" id="project-search-addon" style="background-color:#04A3BB;color:white;width:80px;margin: -16px 0">검색</button>
         </div>
-        <div class="table-responsive project-list">
-            <table class="table project-table table-centered table-nowrap">
-                <thead>
-                    <tr>
-                        <th scope="col">카테고리</th>
-                        <th scope="col">제목</th>
-                        <th scope="col">게시일</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">IT</th>
-                        <td>New admin Design</td>
-                        <td>02/5/2019</td>
-                        <td>
-                            <div class="action">
-                                <a href="#" class="text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Close"> <i class="fa fa-remove h5 m-0"></i></a>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="pt-3">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
-        </div>
     `;
+    new BoardPostList({$target: $boardMain});
   };
 
   this.render();
