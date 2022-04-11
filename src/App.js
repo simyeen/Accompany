@@ -3,6 +3,7 @@ import Home from './page/Home/index.js';
 import Result from './page/Result/index.js';
 import Write from './page/Write/index.js';
 import Footbar from './components/Footbar/Footbar.js';
+import Board from './page/Board/index.js';
 
 export default function App({$target, initialState}) {
   // const storage = new Storage({key: 'path'});
@@ -11,6 +12,8 @@ export default function App({$target, initialState}) {
 
   const home = Home({$target, $header, initialState});
   const resultPage = Result({$target, $header, initialState});
+  const boardPage = Board({$target, initialState});
+
   const writePage = Write({$target});
 
   function route() {
@@ -26,13 +29,45 @@ export default function App({$target, initialState}) {
       home.render();
       $footbar.render();
     } else if (pathname === '#result') {
-      // console.log('result 페이지 렌더링', isHome);
-      resultPage.render();
     } else if (pathname === '#write') {
       writePage.render();
-    } else if (pathname === '/#it-board') {
-    } else if (pathname === '/#welfare-board') {
-    } else if (pathname === '/#qna-board') {
+    } else if (pathname === '#it-board') {
+      boardPage.render({
+        title: 'IT',
+        menu: {},
+      });
+    } else if (pathname === '#welfare-board') {
+      boardPage.render({
+        title: '복지',
+        menu: {
+          의료: ['건강검진', '단체보험', '의료비'],
+          경조사: [
+            '경조금',
+            '상조회비 지원',
+            '화환',
+            '장제',
+            '용품 지원',
+            '상호부조 보험',
+          ],
+          대부: ['금융기관 대부이체'],
+          양육: [
+            '대학장학금',
+            '자녀교육 보조비',
+            '고교 학자금',
+            '출산 축하',
+            '장애 자녀 교육비',
+          ],
+          기타: ['복지포인트', '연금저축', '자기계발비', '휴양시설'],
+        },
+      });
+    } else if (pathname === '#working-board') {
+      boardPage.render({
+        title: '업무',
+      });
+    } else if (pathname === 'qna-board') {
+      boardPage.render({
+        title: 'Q&A',
+      });
     }
   }
 
