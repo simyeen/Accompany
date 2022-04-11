@@ -20,7 +20,7 @@ export default function HomePresenter({
   this.render = () => {
     const $wrapper = createComponent(
       'div',
-      'wrapper py-3 container-fluid border justify-content-center',
+      'wrapper p-3 container-fluid border justify-content-center',
       $target,
     );
     const $subWrapper1 = createComponent(
@@ -44,11 +44,13 @@ export default function HomePresenter({
       'contentList row justify-content-center',
       $subWrapper1,
     );
-    $contentList.innerHTML = categroise.map(
-      c => `<div class='category col-3'>
+    $contentList.innerHTML = categroise
+      .map(
+        c => `<div class='category col-3'>
       <a class='url col-2'; href=${c.url}>${c.text}<a> 
       </div>`,
-    );
+      )
+      .join('');
 
     const $subWrapper2 = createComponent(
       'div',
