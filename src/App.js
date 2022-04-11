@@ -8,7 +8,7 @@ export default function App({$target, initialState}) {
   const $header = new Header({$target, text: '안녕 나는 헤더'});
   const $footbar = new Footbar({$target});
 
-  const home = Home({$target, $header, initialState});
+  const homePage = Home({$target, $header, initialState});
   const resultPage = Result({$target, $header, initialState});
   const writePage = Write({$target});
 
@@ -18,7 +18,7 @@ export default function App({$target, initialState}) {
 
     $header.render({isHome: !location.hash});
     if (pathname === '/') {
-      home.render();
+      homePage.render();
       $footbar.render();
     } else if (pathname === '#result') {
       resultPage.render();
