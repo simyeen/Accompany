@@ -1,8 +1,9 @@
 import {BoardPostList} from '../BoardPostList/BoardPostList.js';
 
 export default function BoardMain({$target}) {
+  let $boardMain = '';
   this.render = () => {
-    const $boardMain = document.createElement('div');
+    $boardMain = document.createElement('div');
     $boardMain.className = 'board-main col py-3';
     $boardMain.style = 'min-width:950px';
     $target.appendChild($boardMain);
@@ -12,10 +13,10 @@ export default function BoardMain({$target}) {
         <div class="d-flex" style="flex-direction:column;width:100%">
         <div class="d-flex flex-row" style='margin-bottom: 15px'>
             <div class="board-main-month-period d-flex flex-row" style='min-width:250px'>
-            <span style='display:inline-block; margin-right:10px; min-width:50px'>기간</span>
-                <a>1개월</a>
-                <a>3개월</a>
-                <a>6개월</a>
+                <span style='display:inline-block; margin-right:10px; min-width:50px'>기간</span>
+                <a class='month-period'>1개월</a>
+                <a class='month-period'>3개월</a>
+                <a class='month-period'>6개월</a>
             </div>
             <div style='border:1px solid #666666; margin:0 20px;'></div>
             <div class='from-date'>
@@ -80,4 +81,20 @@ export default function BoardMain({$target}) {
   };
 
   this.render();
+
+  $boardMain.addEventListener('click', event => {
+    if (event.target.className === 'month-period') {
+      if (event.target.style.backgroundColor === 'rgba(88, 88, 88, 0.77)') {
+        event.target.style = 'background-color:#FFFFFF';
+        event.target.style.color = 'rgba(88, 88, 88, 0.77)';
+      } else {
+        [...document.querySelectorAll('.month-period')].map(element => {
+          element.style.backgroundColor = '#FFFFFF';
+          element.style.color = 'rgba(88, 88, 88, 0.77)';
+        });
+        event.target.style = 'background-color:rgba(88, 88, 88, 0.77)';
+        event.target.style.color = '#FFFFFF';
+      }
+    }
+  });
 }
