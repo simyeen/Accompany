@@ -23,7 +23,7 @@ export default function HomePresenter({
   this.render = () => {
     const $wrapper = createComponent(
       'div',
-      'wrapper p-3 container-fluid border justify-content-center',
+      'wrapper p-3 pb-0 container-fluid border justify-content-center',
       $target
     );
 

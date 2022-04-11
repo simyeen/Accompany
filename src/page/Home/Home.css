@@ -1,3 +1,8 @@
+.wrapper{
+    background: rgb(233, 246, 252);
+    /* background: #fafaf9; */
+}
+
 .searchBox{
     padding :2px;
     margin: 3px 3px;
@@ -52,8 +57,8 @@
 }
 
 .subWrapper2{
-    
-    background-color: aquamarine;
+    background: #8CF0FE;
+    /* background-color: rgb(37, 170, 226); */
 }
 
 .homeBox{
