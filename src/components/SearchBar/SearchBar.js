@@ -1,4 +1,5 @@
 import {createComponent} from '../../utils/createComponent.js';
+import Padding from '../Padding/Padding.js';
 
 export default function SearchBar({$target}) {
   if (!new.target) {
@@ -13,7 +14,7 @@ export default function SearchBar({$target}) {
     );
     const $searchContainer = createComponent(
       'div',
-      'searchContainer ',
+      'searchContainer',
       $searchBar
     );
     const $searchImg = createComponent(
@@ -40,6 +41,8 @@ export default function SearchBar({$target}) {
       'space d-none d-sm-block',
       $searchInputContainer
     );
+
+    const $padding = new Padding({$target: $searchBar});
   };
 
   this.render();

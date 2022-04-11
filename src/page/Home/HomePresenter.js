@@ -1,3 +1,5 @@
+import {CUMMUNITIES} from '../../common/const.js';
+import Padding from '../../components/Padding/Padding.js';
 import SearchBar from '../../components/SearchBar/SearchBar.js';
 import {createComponent} from '../../utils/createComponent.js';
 
@@ -24,6 +26,7 @@ export default function HomePresenter({
       'wrapper p-3 container-fluid border justify-content-center',
       $target
     );
+
     const $subWrapper1 = createComponent(
       'div',
       'subWrapper1 row cotainer-fluid justify-content-center',
@@ -32,27 +35,32 @@ export default function HomePresenter({
 
     const $mainText = createComponent(
       'p',
-      'mainText text-center',
+      'mainText text-center ',
       $subWrapper1
     );
+
+    const $subText = createComponent('p', 'subText text-center', $subWrapper1);
 
     const $searchBar = new SearchBar({$target: $subWrapper1});
 
-    // const $searchBox = createComponent(
-    //   'input',
-    //   'searchBox col-6 ',
-    //   $subWrapper1,
-    // );
+    const $subContentWrapper = createComponent(
+      'div',
+      'subContentWrapper',
+      $wrapper
+    );
+
     const $contentList = createComponent(
       'div',
-      'contentList row justify-content-center',
-      $subWrapper1
+      'contentList col-md-4',
+      $subContentWrapper
     );
+
+    // 이벤트 위임 필요.
     $contentList.innerHTML = categroise
       .map(
-        c => `<div class='category col-3'>
-      <a class='url col-2'; href=${c.url}>${c.text}<a> 
-      </div>`
+        c => `<button class='homeCategory col-3 m-1'>
+        <a class='url'; href=${c.url}>${c.text}<a> 
+      </button>`
       )
       .join('');
 
@@ -63,14 +71,8 @@ export default function HomePresenter({
     );
     const $commnityContainer = createComponent(
       'div',
-      'container commnity my-1 col-sm-5 justify-content-center',
+      'container commnity my-1 col-md-4 col-sm-5 justify-content-center',
       $subWrapper2
-    );
-
-    const $commnityContainerTitle = createComponent(
-      'p',
-      'commnityContainerTitle text-center',
-      $commnityContainer
     );
 
     const $commnityBox = createComponent(
@@ -79,32 +81,60 @@ export default function HomePresenter({
       $commnityContainer
     );
 
-    const $qnaContainer = createComponent(
-      'div',
-      'container qna my-1 col-sm-5 justify-content-center',
-      $subWrapper2
+    const $commnityBoxTitle = createComponent(
+      'p',
+      'homeTitle commnityBoxTitle text-center',
+      $commnityBox
     );
 
-    const $qnaContainerTitle = createComponent(
-      'p',
-      'qnaContainerTitle text-center',
-      $qnaContainer
+    const $commnityBoxContent = createComponent(
+      'div',
+      'homeBox commnityBoxContent',
+      $commnityBox
+    );
+
+    $commnityBoxContent.innerHTML = `${CUMMUNITIES.map(
+      c => `<div class='homeContent'>${c.text}</div>`
+    ).join('')}`;
+
+    const $qnaContainer = createComponent(
+      'div',
+      'container qna my-1 col-md-4 col-sm-5 justify-content-center',
+      $subWrapper2
     );
 
     const $qnaBox = createComponent('div', 'box qnaBox', $qnaContainer);
 
+    const $qnaBoxTitle = createComponent(
+      'p',
+      'homeTitle qnaBoxTitle text-center',
+      $qnaBox
+    );
+
+    const $qnaBoxContent = createComponent(
+      'div',
+      'homeBox qnaBoxContent',
+      $qnaBox
+    );
+
+    $qnaBoxContent.innerHTML = `${CUMMUNITIES.map(
+      c => `<div class='homeContent'>${c.text}</div>`
+    ).join('')}`;
+
     const $div = document.createElement('div');
+    const $div2 = document.createElement('div');
+
     $div.innerHTML = '<a class=it-button href="#result">Go Result</a>';
     $subWrapper2.appendChild($div);
 
-    const $div2 = document.createElement('div');
     $div2.innerHTML = '<a class=it-button href="#write">Go Write</a>';
     $subWrapper2.appendChild($div2);
 
-    $mainText.innerHTML = '안녕 나는 뭐시기저시기 <br/> 메인 텍스트야';
+    $mainText.innerHTML = '매일 성장하고 <br/> 더 멋진 KT인 되기!';
+    $subText.textContent = '언제나 궁금한 점들은 Accompany에게 물어보세요.';
 
-    $commnityContainerTitle.textContent = '커뮤니티';
-    $qnaContainerTitle.textContent = '해결해주세요';
+    $commnityBoxTitle.textContent = '커뮤니티';
+    $qnaBoxTitle.textContent = '해결해주세요';
 
     // $('.searchBar').on('click', searchKeyword);
   };

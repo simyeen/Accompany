@@ -5,3 +5,10 @@ export const CATEGORIES = [
   {text: '업무', url: '#working-board'},
   {text: 'Q&A', url: '#qna-board'},
 ];
+
+export const CUMMUNITIES = [
+  {text: '명예의 전당', url: '#it-board'},
+  {text: '꿀팁 대방출', url: '#welfare-board'},
+  {text: 'HOT 계시물', url: '#working-board'},
+  {text: '사람 구해요', url: '#qna-board'},
+];
